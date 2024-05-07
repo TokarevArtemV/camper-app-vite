@@ -1,0 +1,19 @@
+.glassIconEdit {
+  stroke: black;
+  width: 36px;
+  height: 36px;
+}
+
+.iconEdit {
+  composes: glassIconEdit;
+  width: 24px;
+  height: 24px;
+}
+
+.uploadingIcon:hover {
+  stroke: orange;
+}
+
+.uploadingIcon {
+  padding-right: 8px;
+}

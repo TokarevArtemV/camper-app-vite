@@ -1,0 +1,15 @@
+:global(.Toastify__toast-container) {
+  position: fixed;
+  top: 70px;
+  right: 15;
+}
+
+.container {
+  width: 1352px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.activeButton svg {
+  fill: var(--primary-red) !important;
+  stroke: var(--primary-red) !important;
+}

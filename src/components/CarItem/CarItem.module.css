@@ -1,0 +1,88 @@
+.card_container {
+  display: flex;
+  box-sizing: border-box;
+  gap: 24px;
+  flex-direction: row;
+  max-width: 888px;
+  height: 358px;
+  padding: 24px;
+  border-radius: 20px;
+  border: var(--border);
+}
+.car_image {
+  min-width: 290px;
+  height: 310px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.car_description {
+  max-width: 525px;
+  flex-shrink: 1;
+}
+
+.text_description {
+  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 24px;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: var(--primary-gray);
+}
+
+.title_container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+
+  & h3 {
+    max-width: 320px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  & span {
+    display: inline;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+}
+
+.button_favorite {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.button_favorite svg {
+  transition: var(--transition);
+}
+.button_favorite svg:hover {
+  fill: rgba(216, 67, 67, 0.14);
+}
+.button_favorite svg:active {
+  stroke: var(--hover-red);
+  fill: var(--hover-red);
+}
+.active {
+  background-color: aqua;
+}

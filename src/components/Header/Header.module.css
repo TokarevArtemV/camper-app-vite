@@ -1,0 +1,28 @@
+.header {
+  min-width: 1362px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  height: 90px;
+  background-color: #aaaaaa;
+  border: var(--border);
+  transition: background-color 500ms linear;
+}
+.header__navi {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin: 0px auto;
+}
+
+.header__navi a {
+  color: var(--primary-white);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px; /* 125% */
+}
+
+.header__navi a:hover:not(:first-child) {
+  border-bottom: var(--border);
+}

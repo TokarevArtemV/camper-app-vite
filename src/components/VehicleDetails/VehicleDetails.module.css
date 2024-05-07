@@ -1,0 +1,17 @@
+.detailList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33;
+
+  & p::first-letter {
+    text-transform: uppercase;
+  }
+}

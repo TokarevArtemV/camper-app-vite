@@ -1,0 +1,19 @@
+.reviewsContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 24px;
+
+  & span {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+  }
+  & svg {
+    margin-right: 4px;
+  }
+}
+
+.modal {
+  margin-bottom: 16px;
+}
