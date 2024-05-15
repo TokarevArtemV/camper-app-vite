@@ -4,9 +4,10 @@ import { statusState } from './constants';
 
 const initialState = {
   cars: [],
+  favoriteCars: [],
+  filteredCars: null,
   page: 1,
   limit: 4,
-  favoriteCars: [],
   status: statusState.idle,
   error: null,
   isLoadMore: true,
@@ -31,6 +32,12 @@ const carsSlice = createSlice({
       state.page = 1;
       state.isLoadMore = true;
     },
+    addFilteredCars: (state, { payload }) => {
+      state.filteredCars = payload;
+    },
+    clearFilteredCars: (state) => {
+      state.filteredCars = null;
+    },
   },
   extraReducers: (builder) =>
     builder
@@ -50,7 +57,13 @@ const carsSlice = createSlice({
         state.error = payload;
       }),
 });
-export const { incrementPage, addFavoriteCar, deleteFavoriteCar, clearCars } =
-  carsSlice.actions;
+export const {
+  incrementPage,
+  addFavoriteCar,
+  addFilteredCars,
+  clearFilteredCars,
+  deleteFavoriteCar,
+  clearCars,
+} = carsSlice.actions;
 
 export const carsReducer = carsSlice.reducer;

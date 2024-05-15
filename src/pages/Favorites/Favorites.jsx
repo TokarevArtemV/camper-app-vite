@@ -10,14 +10,11 @@ const Favorites = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    return () => {
-      dispatch(clearCars());
-    };
+    dispatch(clearCars());
   }, [dispatch]);
 
   return (
     <section className={`${s.page_favorite_container} container`}>
-      <Filter />
       <CarList cars={favoritesCars} isFavorites={true} />
     </section>
   );

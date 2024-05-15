@@ -1,4 +1,5 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFilteredCars, clearFilteredCars } from '../../redux/carsSlice';
 import { selectAllCars } from '../../redux/selector';
 import { Formik, Field } from 'formik';
 import { Button, Icons } from '../';
@@ -7,41 +8,40 @@ import s from './Filter.module.css';
 
 const Filter = () => {
   const cars = useSelector(selectAllCars);
+  const dispatch = useDispatch();
+
   const handleSubmit = (value, action) => {
     const searchQuery = Object.assign({}, value);
+
     if (searchQuery.location === '') delete searchQuery.location;
+    if (searchQuery.transmission)
+      searchQuery.transmission = searchQuery.transmission.join();
 
-    // const filteredCars = cars.filter(car => {
-
-    //   return Object.entries(searcQuery).every(item => {
-    //     console.log(item);
-    //     console.log(car);
-    //     return car[key] === value;
-    //   });
-    // });
-
-    const carsKeys = Object.keys(cars);
     const searchKeys = Object.keys(searchQuery);
     const filteredCars = [];
 
-    console.log(searchQuery);
-
-    cars.forEach((car, index) => {
+    cars.forEach((car) => {
       for (let key of searchKeys) {
-        console.log(car[key], '   ', searchQuery[key]);
-        console.log(car[key].includes(searchQuery[key]));
-
-        if (!car[key].includes(searchQuery[key])) {
-          return;
+        if (typeof car[key] === 'object') {
+          let serchKey = searchQuery[key];
+          for (let arrKey of serchKey) {
+            if (!car[key].hasOwnProperty(arrKey)) return;
+            if (car[key][arrKey] < 1) return;
+          }
+        } else {
+          if (!car[key].toLowerCase().includes(searchQuery[key].toLowerCase()))
+            return;
         }
       }
       filteredCars.push(car);
     });
 
-    console.log(filteredCars);
+    dispatch(addFilteredCars(filteredCars));
 
     action.resetForm();
   };
+
+  const clearSearch = () => dispatch(clearFilteredCars());
 
   return (
     <Formik
@@ -223,13 +223,23 @@ const Filter = () => {
               </label>
             </div>
 
-            <Button
-              className={'search'}
-              type="submit"
-              // isDisabled={!(dirty && isValid)}
-            >
-              Search
-            </Button>
+            <div className={s.buttonContainer}>
+              <Button
+                className={'search'}
+                type="submit"
+                // isDisabled={!(dirty && isValid)}
+              >
+                Search
+              </Button>
+              <Button
+                className={'clearSearch'}
+                type="button"
+                onClick={clearSearch}
+                // isDisabled={!(dirty && isValid)}
+              >
+                Clear filters
+              </Button>
+            </div>
           </form>
         );
       }}

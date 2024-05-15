@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { selectAllCars } from '../../redux/selector';
+import { selectAllCars, selectFavoriteCars } from '../../redux/selector';
 import {
   CarFeaturesList,
   CarReviewesList,
@@ -19,8 +19,12 @@ const CarModal = ({ id }) => {
   const handleSelect = (index) => {
     setSelectedTab(index);
   };
+  const allCars = useSelector(selectAllCars);
+  const favoriteCars = useSelector(selectFavoriteCars);
 
-  const currenCar = useSelector(selectAllCars).find((car) => car._id === id);
+  const currenCar = (allCars.length > 0 ? allCars : favoriteCars).find(
+    (car) => car._id === id
+  );
 
   const { name, rating, reviews, price, location, gallery, description } =
     currenCar;

@@ -127,3 +127,9 @@
 .form_typeRadioButton {
   display: none;
 }
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}

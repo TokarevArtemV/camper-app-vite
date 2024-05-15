@@ -14,9 +14,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    return () => {
-      dispatch(clearCars());
-    };
+    dispatch(clearCars());
   }, [dispatch]);
 
   return (
