@@ -51,7 +51,7 @@ const CarItem = ({ carDatails } = {}) => {
         <div className={s.car_description}>
           <div className={s.title_container}>
             <h3>{`${name}`}</h3>
-            <span>&#8364;{`${price}.00`}</span>
+            <span>&#8364;{price.toFixed(2)}</span>
             <button
               ref={refFavButton}
               className={s.button_favorite}

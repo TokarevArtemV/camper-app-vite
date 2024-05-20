@@ -38,32 +38,34 @@ const CarModal = ({ id }) => {
         reviews={reviews}
         location={location}
       />
-      <span className={s.price}>&#8364;{`${price}.00`}</span>
-      <Gallery images={gallery} />
-      <span className={s.description}>{description}</span>
+      <span className={s.price}>&#8364;{price.toFixed(2)}</span>
+      <div className={s.scrollContainer}>
+        <Gallery images={gallery} />
+        <span className={s.description}>{description}</span>
 
-      <Tabs onSelect={handleSelect} defaultIndex={selectedTab}>
-        <TabList>
-          <Tab>Features</Tab>
-          <Tab>Reviews</Tab>
-        </TabList>
-        <TabPanel>
-          <div className={s.features_container}>
-            <div className={s.features_list}>
-              <CarFeaturesList carDatails={currenCar} className={'modal'} />
+        <Tabs onSelect={handleSelect} defaultIndex={selectedTab}>
+          <TabList>
+            <Tab>Features</Tab>
+            <Tab>Reviews</Tab>
+          </TabList>
+          <TabPanel>
+            <div className={s.features_container}>
+              <div className={s.features_list}>
+                <CarFeaturesList carDatails={currenCar} className={'modal'} />
+              </div>
+              <h3 className={s.subtitle}>Vehicle details</h3>
+              <VehicleDetails carDatails={currenCar} />
             </div>
-            <h3 className={s.subtitle}>Vehicle details</h3>
-            <VehicleDetails carDatails={currenCar} />
-          </div>
-          <FormBooking />
-        </TabPanel>
-        <TabPanel>
-          <div className={s.reviews_container}>
-            <CarReviewesList carDatails={currenCar} />
-          </div>
-          <FormBooking />
-        </TabPanel>
-      </Tabs>
+            <FormBooking />
+          </TabPanel>
+          <TabPanel>
+            <div className={s.reviews_container}>
+              <CarReviewesList carDatails={currenCar} />
+            </div>
+            <FormBooking />
+          </TabPanel>
+        </Tabs>
+      </div>
     </div>
   );
 };

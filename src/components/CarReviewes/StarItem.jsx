@@ -1,7 +1,7 @@
 import { Icons } from '../';
 
 const StarItem = ({ reviewer_rating }) => {
-  const starsArray = new Array(reviewer_rating);
+  const starsArray = new Array(5);
 
   {
     return [...starsArray].map((_, index) => {
@@ -10,8 +10,16 @@ const StarItem = ({ reviewer_rating }) => {
           <Icons
             id={'icon-star'}
             size="16"
-            fill="var(--primary-orange)"
-            stroke="var(--primary-orange)"
+            fill={
+              index + 1 <= reviewer_rating
+                ? 'var(--primary-orange)'
+                : 'var(--additional-white)'
+            }
+            stroke={
+              index + 1 <= reviewer_rating
+                ? 'var(--primary-orange)'
+                : 'var(--additional-white)'
+            }
           />
         </li>
       );

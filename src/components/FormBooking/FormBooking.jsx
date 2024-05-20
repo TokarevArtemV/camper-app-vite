@@ -1,6 +1,9 @@
 import { Formik, Field } from 'formik';
 import { Button } from '../';
 import { BookingSchema } from './validationShema';
+import DatepickerField from './DatePickerField';
+import 'react-datepicker/dist/react-datepicker.css';
+import './DatePicker.css';
 import s from './FormBooking.module.css';
 
 const handleSubmit = (value, action) => {
@@ -70,15 +73,16 @@ const FormBooking = () => {
             </div>
             <div className={s.form_input__container}>
               <Field
-                className={s.form_input__date}
-                type="date"
                 name="date"
+                className={s.form_input__date}
+                component={DatepickerField}
+                type="date"
                 placeholder="Booking date"
                 value={values.date}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 title="Booking date should be valid, example `01.01.2024`"
-              />
+              />{' '}
               {errors.date && touched.date ? (
                 <div className={s.error_container}>{errors.date}</div>
               ) : null}
@@ -93,10 +97,7 @@ const FormBooking = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 title="Comment"
-              />{' '}
-              {errors.comment && touched.comment ? (
-                <div className={s.error_container}>{errors.comment}</div>
-              ) : null}
+              />
             </div>
 
             <Button

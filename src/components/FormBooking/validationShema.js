@@ -12,7 +12,4 @@ export const BookingSchema = Yup.object().shape({
       new Date(new Date().setDate(new Date().getDate() - 1)),
       'You cannot enter a date from the past'
     ),
-  comment: Yup.string()
-    .required()
-    .min(10, 'Comment is too short-should be 10 chars minimum'),
 });
