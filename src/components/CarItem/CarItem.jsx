@@ -39,7 +39,7 @@ const CarItem = ({ carDatails } = {}) => {
   return (
     <>
       <li className={s.card_container}>
-        <div className={s.car_image}>
+        <div className={s.car_image} onClick={handleCloseModal}>
           <img
             src={
               gallery[0] ||

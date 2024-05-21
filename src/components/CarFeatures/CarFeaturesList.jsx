@@ -9,15 +9,20 @@ const CarFeaturesList = ({ carDatails, limits = 14, className }) => {
     kitchen: carDatails.details.kitchen,
     beds: carDatails.details.beds,
     airConditioner: carDatails.details.airConditioner,
-    cd: carDatails.details.cd,
+    cd: carDatails.details.CD,
     radio: carDatails.details.radio,
-    plate: carDatails.details.plate,
-    tv: carDatails.details.tv,
+    tv: carDatails.details.TV,
     freezer: carDatails.details.freezer,
     microwave: carDatails.details.microwave,
     shower: carDatails.details.shower,
     toilet: carDatails.details.toilet,
   };
+
+  for (let prop in carFeatures) {
+    if (!carFeatures[prop]) {
+      delete carFeatures[prop];
+    }
+  }
 
   return (
     <ul className={`${s.featureContainer} ${className ? s[className] : ''}`}>

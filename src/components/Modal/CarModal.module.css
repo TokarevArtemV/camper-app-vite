@@ -56,11 +56,14 @@
 
 .features_container {
   width: 430px;
+  height: 200px;
 }
 
 .features_list {
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+
+  margin-bottom: 24px;
 }
 
 .subtitle {

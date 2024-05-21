@@ -35,3 +35,8 @@
   font-variation-settings: 'slnt' 0;
   color: var(--text-color);
 }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

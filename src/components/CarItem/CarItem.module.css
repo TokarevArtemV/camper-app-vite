@@ -14,6 +14,7 @@
   height: 310px;
   border-radius: 10px;
   overflow: hidden;
+  cursor: pointer;
 
   & img {
     width: 100%;
