@@ -1,4 +1,22 @@
+.link__icon {
+  margin-right: 16px;
+}
 .icon {
-  height: 50px;
-  margin-right: 250px;
+  height: 40px;
+}
+@media screen and (min-width: 958px) and (max-width: 1361px) {
+  .icon {
+    height: 50px;
+  }
+  .link__icon {
+    margin-right: 250px;
+  }
+}
+@media screen and (min-width: 1362px) {
+  .icon {
+    height: 50px;
+  }
+  .link__icon {
+    margin-right: 250px;
+  }
 }

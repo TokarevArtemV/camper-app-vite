@@ -3,14 +3,15 @@
   box-sizing: border-box;
   gap: 24px;
   flex-direction: row;
-  max-width: 888px;
-  height: 358px;
+  flex-wrap: wrap;
+  height: auto;
+  max-width: 472px;
   padding: 24px;
   border-radius: 20px;
   border: var(--border);
 }
 .car_image {
-  min-width: 290px;
+  width: 100%;
   height: 310px;
   border-radius: 10px;
   overflow: hidden;
@@ -22,7 +23,6 @@
     object-fit: cover;
   }
 }
-
 .car_description {
   max-width: 525px;
   flex-shrink: 1;
@@ -42,11 +42,13 @@
 .title_container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: end;
   width: 100%;
   margin-bottom: 8px;
 
   & h3 {
-    max-width: 320px;
+    max-width: 258px;
     display: block;
     white-space: nowrap;
     overflow: hidden;
@@ -67,7 +69,7 @@
 .button_favorite {
   display: flex;
   align-items: center;
-  margin-left: 10px;
+  margin-left: auto;
   padding: 0;
   border: none;
   outline: none;
@@ -86,4 +88,20 @@
 }
 .active {
   background-color: aqua;
+}
+@media screen and (min-width: 1362px) {
+  .card_container {
+    flex-wrap: nowrap;
+    max-width: 888px;
+    height: 358px;
+  }
+  .car_image {
+    width: 290px;
+  }
+  .title_container h3 {
+    max-width: 320px;
+  }
+  .button_favorite {
+    margin-left: 10px;
+  }
 }

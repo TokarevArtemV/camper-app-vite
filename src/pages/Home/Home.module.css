@@ -12,7 +12,7 @@
 .page_home_image_container {
   z-index: -1;
   height: calc(100vh - 90px);
-  min-width: 1362px;
+  /* min-width: 1362px; */
   background-image: url(../../assets/static/images/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;

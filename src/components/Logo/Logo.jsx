@@ -4,7 +4,7 @@ import s from './Logo.module.css';
 
 const Logo = () => {
   return (
-    <Link to="/">
+    <Link to="/" className={s.link__icon}>
       <img className={s.icon} src={logo} alt="Logo of camper" />
     </Link>
   );
