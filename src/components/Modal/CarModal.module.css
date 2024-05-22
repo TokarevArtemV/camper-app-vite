@@ -78,3 +78,21 @@
 .reviews_container {
   composes: features_container;
 }
+
+@media screen and (max-width: 1000px) {
+  .modal_container {
+    max-width: 90vw;
+  }
+  .scrollContainer {
+    width: 100%;
+    padding: 0;
+    height: 400px;
+  }
+  .description {
+    height: 140px;
+  }
+  .features_container {
+    width: 100%;
+    height: auto;
+  }
+}

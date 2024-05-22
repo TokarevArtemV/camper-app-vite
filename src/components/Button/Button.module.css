@@ -43,7 +43,7 @@
 .rent {
   z-index: 3;
   position: absolute;
-  bottom: 300px;
+  bottom: 10vh;
   left: 50px;
   padding: 16px 60px;
   text-transform: uppercase;

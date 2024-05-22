@@ -35,3 +35,8 @@
   cursor: pointer;
   z-index: 200;
 }
+@media screen and (max-width: 1000px) {
+  .container {
+    padding: 16px;
+  }
+}

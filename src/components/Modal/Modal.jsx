@@ -43,7 +43,7 @@ const Modal = ({ onClose, children, className }) => {
           <Icons id={'icon-cross'} size="32" />
         </button>
 
-        <div className={s.content}>{children}</div>
+        <>{children}</>
       </div>
     </div>,
     modalRootRef

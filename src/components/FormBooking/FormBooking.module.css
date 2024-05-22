@@ -65,3 +65,9 @@ input.reg::placeholder {
   font-size: 12px;
   color: var(--primary-red);
 }
+
+@media screen and (max-width: 1000px) {
+  .form_container {
+    width: 100%;
+  }
+}

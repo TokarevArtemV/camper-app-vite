@@ -40,7 +40,7 @@
 }
 
 .form_filtersText {
-  color: var(--subtext-color);
+  color: var(--primary-gray);
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: 14px;

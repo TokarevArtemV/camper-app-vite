@@ -34,3 +34,8 @@
   gap: 24px;
   width: 100%;
 }
+@media screen and (max-width: 1000px) {
+  .react-tabs__tab-panel {
+    flex-direction: column;
+  }
+}

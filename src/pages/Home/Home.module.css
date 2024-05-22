@@ -32,3 +32,8 @@
   color: var(--primary-white);
   margin: 0;
 }
+@media screen and (max-width: 768px) {
+  .page_home_title {
+    font-size: 28px;
+  }
+}
